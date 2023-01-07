@@ -1,6 +1,6 @@
 <!-- @format -->
 
-# 🚀 Sending emails with Rate-limit using Zuplo
+# 🚀 Sending emails generated using mjml-react using Nodemailer
 
 To run this Project locally, make sure your are running a `Node Version` greater
 than or equal to `18.0.0`. If you have using a Node version `<18.0.0` that is
