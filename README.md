@@ -65,15 +65,8 @@ spec, eg `v16.0.8`
     -   #### Terminal one, which builds the app using `webpack --watch` command
 
         ```sh
-         export NODE_ENV=development && pnpm run dev-build
-        ```
-
-    -   Terminal two, which run `nodemon build/bundle.js` every time the
-        `webpack` bundles the code into `build/bundle.js`
-
-        ```sh
-          export NODE_ENV=development && pnpm run dev
-        ```
+         export NODE_ENV=development && pnpm run build:watch
+        ``` 
 
 -   ### To run the app and build it for production
 

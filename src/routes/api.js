@@ -3,6 +3,8 @@ import express from 'express';
 import Cors from 'cors';
 import testApiRouter from '@/routes/api/test';
 import statusApiRouter from '@/routes/api/status';
+import sendEmailRouter from '@/routes/api/send-email';
+import testEmailRouter from '@/routes/api/test-email';
 
 //create a router object
 //NOTE the default path is /api/:path for this  app
@@ -16,6 +18,12 @@ apiRouter.use('/status', statusApiRouter);
 
 //the /api/test api route
 apiRouter.use('/test', testApiRouter);
+
+//maps to the /api/send-email route
+apiRouter.use('/send-email', sendEmailRouter);
+
+//maps to the /api/test-email
+apiRouter.use('/test-email', testEmailRouter);
 
 /***
  * if you are calling the API from your frontend code
