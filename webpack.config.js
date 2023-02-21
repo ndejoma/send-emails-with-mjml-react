@@ -20,8 +20,11 @@ const { dependencies } = require('./package.json');
 //     });
 
 //new solution using the package.json
+//this packages will be excluded form the Webpack bundle
+//Some modules cannot be bundle like those which have binary deps(.node)
+//Instead these packages will be rquired at runtime usiing require('module')
 //This is faster than the above solution we don't have to read the node_modules folder
-const nodeModules = Object.keys(dependencies).reduce((prev, curr) => {
+const externalPackages = Object.keys(dependencies).reduce((prev, curr) => {
 	return {
 		...prev,
 		[curr]: `commonjs ${curr}`,
@@ -63,5 +66,5 @@ module.exports = {
 	//this prevents bundling of dependencies under the node_modules folder eg express
 	//instead the modules will be required at runtime on the server
 	//we will only bundle our application code
-	externals: nodeModules,
+	externals: externalPackages,
 };
