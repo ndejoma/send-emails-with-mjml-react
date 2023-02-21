@@ -19,10 +19,10 @@ const { dependencies } = require('./package.json');
 //         return { ...prev, [curr]: `commonjs ${curr}` };
 //     });
 
-//new solution using the package.json
-//this packages will be excluded form the Webpack bundle
-//Some modules cannot be bundle like those which have binary deps(.node)
-//Instead these packages will be rquired at runtime usiing require('module')
+//The new solution using the package.json
+//these packages will be excluded from the Webpack's output bundle
+//Some modules cannot be bundled like those which have binary deps(.node)
+//Instead these packages will be required at runtime usiing require('module')
 //This is faster than the above solution we don't have to read the node_modules folder
 const externalPackages = Object.keys(dependencies).reduce((prev, curr) => {
 	return {
